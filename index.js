@@ -16,7 +16,7 @@ app.use(cors({origin: '*'}));
 //Routes
 app.use('/api', routes);
 app.get('/', (req, res)=>{
-  res.send('Hola!, mi primer conexión con MySQL')
+  res.send('Hola!, mi primer conexión con MySQL, modificada')
 })
 
 //Ajustes del servidor
