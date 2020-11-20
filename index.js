@@ -9,10 +9,10 @@ require('dotenv').config()
 app.set('port', process.env.PORT || 3000);
 
 
-
 //Middlewares
 app.use(express.json());
 app.use(cors({origin: '*'}));
+
 //Routes
 app.use('/api', routes);
 app.get('/', (req, res)=>{

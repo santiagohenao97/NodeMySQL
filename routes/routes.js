@@ -17,10 +17,10 @@ router.get('/estudiantes', (req, res) => {
 
 router.post('/nuevo-estudiante',(req,res)=>{
 
-const {nombres,apellidos,correo,documento,telefono_celular,fecha_nacimiento,institucion_id} = req.body;
-let alumno = [nombres,apellidos,correo,documento,telefono_celular,fecha_nacimiento,institucion_id];
+const {nombres,apellidos,correo,numero_expediente, documento,tipo_documento,genero,institucion_id,telefono_celular} = req.body;
+let alumno = [nombres,apellidos,correo,numero_expediente, documento,tipo_documento,genero,institucion_id,telefono_celular];
 
-let nuevoAlumno = `INSERT INTO actores(nombres,apellidos,correo,documento,telefono_celular,fecha_nacimiento,institucion_id)
+let nuevoAlumno = `INSERT INTO actores(nombres,apellidos,correo,numero_expediente, documento,tipo_documento,genero,institucion_id,telefono_celular)
                   VALUES(?,?,?,?,?,?,?)`;
 mysqlConnection.query(nuevoAlumno, alumno, (err, results, fields) => {
   if (err) {
